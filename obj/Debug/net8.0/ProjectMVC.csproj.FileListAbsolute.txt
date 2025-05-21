@@ -28,3 +28,4 @@
 /Users/nguyenan/Documents/DotnetMVC/ProjectMVC/obj/Debug/net8.0/ProjectMVC.pdb
 /Users/nguyenan/Documents/DotnetMVC/ProjectMVC/obj/Debug/net8.0/ProjectMVC.genruntimeconfig.cache
 /Users/nguyenan/Documents/DotnetMVC/ProjectMVC/obj/Debug/net8.0/ref/ProjectMVC.dll
+/Users/nguyenan/Documents/DotnetMVC/ProjectMVC/obj/Debug/net8.0/ProjectMVC.sourcelink.json
