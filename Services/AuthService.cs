@@ -47,7 +47,7 @@ namespace ProjectMVC.Services
             return await _context.UserRoles
                 .Where(ur => ur.UserId == user.Id)
                 .Include(ur => ur.Role)
-                .Select(ur => ur.Role.RoleCode)
+                .Select(u => u.Role.RoleCode)
                 .ToListAsync();
         }
 
@@ -62,7 +62,7 @@ namespace ProjectMVC.Services
         public async Task<(bool success, string message)> LoginAsync(LoginDTO model)
         {
             var user = await _context.Users
-                .Include(u => u.UserRoles)
+                .Include(c => c.UserRoles)
                 .ThenInclude(ur => ur.Role)
                 .FirstOrDefaultAsync(u => u.Username == model.Username);
 
@@ -77,7 +77,7 @@ namespace ProjectMVC.Services
             }
 
             var hashedPassword = HashPassword(model.Password);
-            if (user.PasswordHash != hashedPassword)
+            if (hashedPassword != user.PasswordHash)
             {
                 return (false, "Invalid username or password");
             }
@@ -107,6 +107,7 @@ namespace ProjectMVC.Services
                 authProperties);
 
             return (true, "Login successful");
+
         }
 
         public async Task LogoutAsync()
