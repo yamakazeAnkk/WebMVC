@@ -19,13 +19,13 @@ public partial class User
 
     public int? DepartmentId { get; set; }
 
-    public bool? IsActive { get; set; }
+    public bool IsActive { get; set; }
 
-    public DateTime? CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; }
 
     public virtual Department? Department { get; set; }
 
-    public virtual ICollection<Department> Departments { get; set; } = new List<Department>();
+    public virtual ICollection<DepartmentManager> DepartmentManagers { get; set; } = new List<DepartmentManager>();
 
     public virtual ICollection<EmployeeCard> EmployeeCards { get; set; } = new List<EmployeeCard>();
 

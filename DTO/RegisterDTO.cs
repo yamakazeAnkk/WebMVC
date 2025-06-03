@@ -1,23 +1,35 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProjectMVC.DTO
 {
     public class RegisterDTO
     {
-        [Required(ErrorMessage = "Name is required")]
-        [StringLength(100, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 100 characters")]
-        public string Name { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Username { get; set; }
 
-        [Required(ErrorMessage = "Email is required")]
-        [EmailAddress(ErrorMessage = "Invalid email address")]
+        [Required]
+        [StringLength(100)]
+        public string FullName { get; set; }
+
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Password is required")]
-        [StringLength(100, MinimumLength = 8, ErrorMessage = "Password must be at least 8 characters long")]
+        [Phone]
+        public string? Phone { get; set; }
+
+        [Required]
+        [StringLength(100, MinimumLength = 6)]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        [Required]
+        [Compare("Password")]
+        [DataType(DataType.Password)]
+        public string ConfirmPassword { get; set; }
+
+        [Required]
+        public int? DepartmentId { get; set; }
     }
 }

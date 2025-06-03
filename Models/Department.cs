@@ -9,9 +9,7 @@ public partial class Department
 
     public string Name { get; set; } = null!;
 
-    public int? ManagerId { get; set; }
-
-    public virtual User? Manager { get; set; }
+    public virtual ICollection<DepartmentManager> DepartmentManagers { get; set; } = new List<DepartmentManager>();
 
     public virtual ICollection<User> Users { get; set; } = new List<User>();
 }
