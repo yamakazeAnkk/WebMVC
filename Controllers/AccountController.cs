@@ -55,6 +55,7 @@ namespace ProjectMVC.Controllers
             catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
+                
             }
 
             return View(model);

@@ -23,7 +23,9 @@ builder.Services.AddAuthentication("CustomAuth")
 
 // Add Authorization
 builder.Services.AddAuthorization();
-
+// Add EmployeeCardService
+builder.Services.AddScoped<IEmployeeCardService, EmployeeCardService>();
+// Add AuthService
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddHttpContextAccessor();

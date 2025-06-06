@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using ProjectMVC.DTO;
@@ -18,6 +19,9 @@ namespace ProjectMVC.Services.Interfaces
         Task<bool> IsInRoleAsync(User user,string roleCode);
 
         Task<IEnumerable<string>> GetUserRoleAsync(User user);
+
+        
+        
 
 
         
