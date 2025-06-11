@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjectMVC.Data;
 using ProjectMVC.Services;
 using ProjectMVC.Services.Interfaces;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,9 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<IEmployeeCardService, EmployeeCardService>();
 // Add AuthService
 builder.Services.AddScoped<IAuthService, AuthService>();
+
+// Add AutoMapper
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 builder.Services.AddHttpContextAccessor();
 
